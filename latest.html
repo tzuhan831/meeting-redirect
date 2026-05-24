@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meeting Redirect</title>
+    <script src="./url.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const target = window.MEETING_APP_URL || "";
+        const link = document.querySelector("#targetLink");
+
+        if (!target) {
+          document.querySelector("#status").textContent = "?桀?撠閮剖??降蝬脣???;
+          return;
+        }
+
+        link.href = target;
+        link.textContent = target;
+        document.querySelector("#status").textContent = "甇?????唳?霅啁雯?...";
+        setTimeout(() => location.replace(target), 600);
+      });
+    </script>
+  </head>
+  <body style="font-family: system-ui, sans-serif; margin: 32px; line-height: 1.6;">
+    <h1>?降?</h1>
+    <p id="status">霈???啁雯?銝?..</p>
+    <p><a id="targetLink" href="#">????</a></p>
+  </body>
+</html>
