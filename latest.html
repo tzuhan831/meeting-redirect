@@ -3,28 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <title>Meeting Redirect</title>
-    <script src="./url.js"></script>
     <script>
+      const TARGET = "https://sides-sprint-neighborhood-scoop.trycloudflare.com";
       window.addEventListener("DOMContentLoaded", () => {
-        const target = window.MEETING_APP_URL || "";
+        const status = document.querySelector("#status");
         const link = document.querySelector("#targetLink");
-
-        if (!target) {
-          document.querySelector("#status").textContent = "?桀?撠閮剖??降蝬脣???;
-          return;
-        }
-
-        link.href = target;
-        link.textContent = target;
-        document.querySelector("#status").textContent = "甇?????唳?霅啁雯?...";
-        setTimeout(() => location.replace(target), 600);
+        link.href = TARGET;
+        link.textContent = TARGET;
+        status.textContent = "\u6b63\u5728\u958b\u555f\u6700\u65b0\u6703\u8b70\u7db2\u5740...";
+        setTimeout(() => location.replace(TARGET), 600);
       });
     </script>
   </head>
   <body style="font-family: system-ui, sans-serif; margin: 32px; line-height: 1.6;">
-    <h1>?降?</h1>
-    <p id="status">霈???啁雯?銝?..</p>
-    <p><a id="targetLink" href="#">????</a></p>
+    <h1>&#26371;&#35696;&#37636;&#38899;</h1>
+    <p id="status">&#35712;&#21462;&#26368;&#26032;&#32178;&#22336;&#20013;...</p>
+    <p><a id="targetLink" href="#">&#25163;&#21205;&#38283;&#21855;</a></p>
   </body>
 </html>
